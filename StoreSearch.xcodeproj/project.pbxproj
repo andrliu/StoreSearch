@@ -14,6 +14,7 @@
 		497EFA911A5A2F530015BA60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497EFA901A5A2F530015BA60 /* Images.xcassets */; };
 		497EFA941A5A2F530015BA60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497EFA921A5A2F530015BA60 /* LaunchScreen.xib */; };
 		497EFAA01A5A2F530015BA60 /* StoreSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EFA9F1A5A2F530015BA60 /* StoreSearchTests.swift */; };
+		497EFAAA1A5B96F80015BA60 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EFAA91A5B96F80015BA60 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		497EFA991A5A2F530015BA60 /* StoreSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		497EFA9E1A5A2F530015BA60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		497EFA9F1A5A2F530015BA60 /* StoreSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchTests.swift; sourceTree = "<group>"; };
+		497EFAA91A5B96F80015BA60 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				497EFA861A5A2F530015BA60 /* AppDelegate.swift */,
 				497EFA8B1A5A2F530015BA60 /* SearchViewController.swift */,
+				497EFAA91A5B96F80015BA60 /* SearchResult.swift */,
 				497EFA8D1A5A2F530015BA60 /* Main.storyboard */,
 				497EFA901A5A2F530015BA60 /* Images.xcassets */,
 				497EFA921A5A2F530015BA60 /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 			files = (
 				497EFA8C1A5A2F530015BA60 /* SearchViewController.swift in Sources */,
 				497EFA871A5A2F530015BA60 /* AppDelegate.swift in Sources */,
+				497EFAAA1A5B96F80015BA60 /* SearchResult.swift in Sources */,
 				497EFA8A1A5A2F530015BA60 /* StoreSearch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
