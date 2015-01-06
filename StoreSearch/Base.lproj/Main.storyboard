@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
@@ -15,8 +16,53 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WaE-kF-DlL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="bQr-Sx-Oin"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Szs-Pe-kKa"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="KAu-Wl-623">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zjI-I3-sWF"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="194-2y-8pg"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WaE-kF-DlL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="39i-tU-24R"/>
+                            <constraint firstItem="WaE-kF-DlL" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="742-Qg-RPk"/>
+                            <constraint firstItem="WaE-kF-DlL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="GvH-qW-1Bo"/>
+                            <constraint firstItem="WaE-kF-DlL" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="JMB-YD-hyw"/>
+                            <constraint firstItem="KAu-Wl-623" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="MLp-mX-D7o"/>
+                            <constraint firstAttribute="trailing" secondItem="WaE-kF-DlL" secondAttribute="trailing" id="Z9y-0A-gro"/>
+                            <constraint firstItem="KAu-Wl-623" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="b97-D2-arG"/>
+                            <constraint firstAttribute="trailing" secondItem="KAu-Wl-623" secondAttribute="trailing" id="nBh-Fe-4wZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WaE-kF-DlL" secondAttribute="trailing" constant="-16" id="oXR-Iu-hYJ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="WaE-kF-DlL" secondAttribute="bottom" id="p2o-WB-7vS"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="WaE-kF-DlL" secondAttribute="bottom" id="x1D-rI-B0Q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="39i-tU-24R"/>
+                                <exclude reference="742-Qg-RPk"/>
+                                <exclude reference="oXR-Iu-hYJ"/>
+                                <exclude reference="p2o-WB-7vS"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="KAu-Wl-623" id="rT5-BB-n3C"/>
+                        <outlet property="tableView" destination="WaE-kF-DlL" id="bfZ-fC-90b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
