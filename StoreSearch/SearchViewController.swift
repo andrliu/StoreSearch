@@ -32,26 +32,29 @@ class SearchViewController: UIViewController {
         tableView.registerNib(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.nothingFoundCell)
         searchBar.becomeFirstResponder()
     }
+
+    func urlWithSearchText(searchText: String) -> NSURL
+    {
+        let escapedSearchText = searchText.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let urlString = String(format:"http://itunes.apple.com/search?term=%@", escapedSearchText)
+        let url = NSURL(string: urlString)
+        return url!
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate
 {
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
-        searchBar.resignFirstResponder()
-        searchResults = [SearchResult]()
-        if searchBar.text != "justin bieber"
+        if !searchBar.text.isEmpty
         {
-            for i in 0...2
-            {
-                let searchResult = SearchResult()
-                searchResult.name = String(format: "Fake Result %d for", i)
-                searchResult.artistName = searchBar.text
-                searchResults.append(searchResult)
-            }
+            searchBar.resignFirstResponder()
+            hasSearched = true
+            searchResults = [SearchResult]()
+            let url = urlWithSearchText(searchBar.text)
+            println("URL: '\(url)'")
+            tableView.reloadData()
         }
-        hasSearched = true
-        tableView.reloadData()
     }
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition
