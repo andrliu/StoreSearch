@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     var hasSearched = false
     var isLoading = false
     var dataTask: NSURLSessionDataTask?
+    var landscapeViewController: LandscapeViewController?
     
     struct TableViewCellIdentifiers
     {
@@ -40,6 +41,57 @@ class SearchViewController: UIViewController {
         tableView.registerNib(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
     }
 
+    override func willTransitionToTraitCollection( newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
+    {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        switch newCollection.verticalSizeClass
+        {
+            case .Compact:
+                showLandscapeViewWithCoordinator(coordinator)
+            case .Regular, .Unspecified:
+                hideLandscapeViewWithCoordinator(coordinator)
+        }
+    }
+    
+    func showLandscapeViewWithCoordinator(coordinator: UIViewControllerTransitionCoordinator)
+    {
+        precondition(landscapeViewController == nil)
+        landscapeViewController = storyboard!.instantiateViewControllerWithIdentifier("LandscapeViewController") as? LandscapeViewController
+        if let controller = landscapeViewController
+        {
+            controller.searchResults = searchResults
+            controller.view.frame = view.bounds
+            controller.view.alpha = 0
+            view.addSubview(controller.view)
+            addChildViewController(controller)
+            coordinator.animateAlongsideTransition({ _ in
+                controller.view.alpha = 1
+                self.searchBar.resignFirstResponder()
+                if self.presentedViewController != nil
+                {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }, completion: { _ in
+                controller.didMoveToParentViewController(self)
+            })
+        }
+    }
+    
+    func hideLandscapeViewWithCoordinator(coordinator: UIViewControllerTransitionCoordinator)
+    {
+        if let controller = landscapeViewController
+        {
+            controller.willMoveToParentViewController(nil)
+            coordinator.animateAlongsideTransition({ _ in
+                controller.view.alpha = 0
+            }, completion: { _ in
+                controller.view.removeFromSuperview()
+                controller.removeFromParentViewController()
+                self.landscapeViewController = nil
+            })
+        }
+    }
+    
     func urlWithSearchText(searchText: String, category: Int) -> NSURL
     {
         var entityName: String

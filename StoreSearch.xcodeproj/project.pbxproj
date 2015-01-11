@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		492F2AA61A62662B0050DAA8 /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F2AA51A62662B0050DAA8 /* BounceAnimationController.swift */; };
 		492F2AA81A6269470050DAA8 /* SlideOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F2AA71A6269470050DAA8 /* SlideOutAnimationController.swift */; };
+		492F2AAA1A627BE70050DAA8 /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F2AA91A627BE70050DAA8 /* LandscapeViewController.swift */; };
 		497469D61A611397001E5871 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497469D51A611397001E5871 /* DetailViewController.swift */; };
 		497469D81A611607001E5871 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497469D71A611607001E5871 /* DimmingPresentationController.swift */; };
 		497469DA1A612958001E5871 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497469D91A612958001E5871 /* GradientView.swift */; };
@@ -24,6 +25,7 @@
 		497EFAB01A5D02280015BA60 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497EFAAF1A5D02280015BA60 /* NothingFoundCell.xib */; };
 		49A80C7A1A5FC1F20045E73D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A80C791A5FC1F20045E73D /* LoadingCell.xib */; };
 		49A80C7C1A603A1F0045E73D /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A80C7B1A603A1F0045E73D /* UIImageView+DownloadImage.swift */; };
+		49BAF2001A6286F500C18C9B /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BAF1FF1A6286F500C18C9B /* FadeOutAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 /* Begin PBXFileReference section */
 		492F2AA51A62662B0050DAA8 /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
 		492F2AA71A6269470050DAA8 /* SlideOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationController.swift; sourceTree = "<group>"; };
+		492F2AA91A627BE70050DAA8 /* LandscapeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
 		497469D51A611397001E5871 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		497469D71A611607001E5871 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
 		497469D91A612958001E5871 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		497EFAAF1A5D02280015BA60 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		49A80C791A5FC1F20045E73D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		49A80C7B1A603A1F0045E73D /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		49BAF1FF1A6286F500C18C9B /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +106,10 @@
 				497EFA861A5A2F530015BA60 /* AppDelegate.swift */,
 				497EFA8B1A5A2F530015BA60 /* SearchViewController.swift */,
 				497469D51A611397001E5871 /* DetailViewController.swift */,
+				492F2AA91A627BE70050DAA8 /* LandscapeViewController.swift */,
 				497469D71A611607001E5871 /* DimmingPresentationController.swift */,
 				492F2AA71A6269470050DAA8 /* SlideOutAnimationController.swift */,
+				49BAF1FF1A6286F500C18C9B /* FadeOutAnimationController.swift */,
 				497469D91A612958001E5871 /* GradientView.swift */,
 				492F2AA51A62662B0050DAA8 /* BounceAnimationController.swift */,
 				497EFAA91A5B96F80015BA60 /* SearchResult.swift */,
@@ -256,7 +262,9 @@
 				497EFA8A1A5A2F530015BA60 /* StoreSearch.xcdatamodeld in Sources */,
 				497EFAAE1A5CFF940015BA60 /* SearchResultCell.swift in Sources */,
 				492F2AA81A6269470050DAA8 /* SlideOutAnimationController.swift in Sources */,
+				49BAF2001A6286F500C18C9B /* FadeOutAnimationController.swift in Sources */,
 				497469D61A611397001E5871 /* DetailViewController.swift in Sources */,
+				492F2AAA1A627BE70050DAA8 /* LandscapeViewController.swift in Sources */,
 				497469DA1A612958001E5871 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

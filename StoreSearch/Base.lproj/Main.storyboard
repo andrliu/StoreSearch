@@ -93,6 +93,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Landscape View Controller-->
+        <scene sceneID="lXb-CF-hpt">
+            <objects>
+                <viewController storyboardIdentifier="LandscapeViewController" id="a4J-Ms-l0j" customClass="LandscapeViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RJj-vs-RNK"/>
+                        <viewControllerLayoutGuide type="bottom" id="IoZ-Bf-i3l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="de2-fz-NMm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F5M-6U-qFL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a4J-Ms-l0j" id="sdO-vb-qES"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cgr-Q6-rpd">
+                                <rect key="frame" x="280" y="500" width="39" height="37"/>
+                                <connections>
+                                    <action selector="pageChanged:" destination="a4J-Ms-l0j" eventType="valueChanged" id="sHs-fT-kTH"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="Cgr-Q6-rpd" id="NBv-3f-IVH"/>
+                        <outlet property="scrollView" destination="F5M-6U-qFL" id="yRo-1M-PjR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZxH-zj-vVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663" y="964"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="b3L-Uu-Grz">
             <objects>
@@ -272,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSP-EU-r69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013" y="333"/>
+            <point key="canvasLocation" x="1017" y="256"/>
         </scene>
     </scenes>
     <resources>

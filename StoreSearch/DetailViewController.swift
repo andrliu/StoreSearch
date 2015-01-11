@@ -19,6 +19,12 @@ class DetailViewController: UIViewController
     @IBOutlet weak var priceButton: UIButton!
     var searchResult: SearchResult!
     var downloadTask: NSURLSessionDownloadTask?
+    var dismissAnimationStyle = AnimationStyle.Fade
+    enum AnimationStyle
+    {
+        case Slide
+        case Fade
+    }
     
     deinit
     {
@@ -35,6 +41,7 @@ class DetailViewController: UIViewController
     
     @IBAction func close(sender: UIButton)
     {
+        dismissAnimationStyle = .Slide
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -115,7 +122,13 @@ extension DetailViewController: UIViewControllerTransitioningDelegate
     
     func animationControllerForDismissedController( dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?
     {
-        return SlideOutAnimationController()
+        switch dismissAnimationStyle
+        {
+            case .Slide:
+                return SlideOutAnimationController()
+            case .Fade:
+                return FadeOutAnimationController()
+        }
     }
 }
 
