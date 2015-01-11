@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492F2AA61A62662B0050DAA8 /* BounceAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F2AA51A62662B0050DAA8 /* BounceAnimationController.swift */; };
+		492F2AA81A6269470050DAA8 /* SlideOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492F2AA71A6269470050DAA8 /* SlideOutAnimationController.swift */; };
+		497469D61A611397001E5871 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497469D51A611397001E5871 /* DetailViewController.swift */; };
+		497469D81A611607001E5871 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497469D71A611607001E5871 /* DimmingPresentationController.swift */; };
+		497469DA1A612958001E5871 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497469D91A612958001E5871 /* GradientView.swift */; };
 		497EFA871A5A2F530015BA60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EFA861A5A2F530015BA60 /* AppDelegate.swift */; };
 		497EFA8A1A5A2F530015BA60 /* StoreSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 497EFA881A5A2F530015BA60 /* StoreSearch.xcdatamodeld */; };
 		497EFA8C1A5A2F530015BA60 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EFA8B1A5A2F530015BA60 /* SearchViewController.swift */; };
 		497EFA8F1A5A2F530015BA60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497EFA8D1A5A2F530015BA60 /* Main.storyboard */; };
 		497EFA911A5A2F530015BA60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497EFA901A5A2F530015BA60 /* Images.xcassets */; };
-		497EFA941A5A2F530015BA60 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497EFA921A5A2F530015BA60 /* LaunchScreen.xib */; };
 		497EFAA01A5A2F530015BA60 /* StoreSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EFA9F1A5A2F530015BA60 /* StoreSearchTests.swift */; };
 		497EFAAA1A5B96F80015BA60 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EFAA91A5B96F80015BA60 /* SearchResult.swift */; };
 		497EFAAC1A5BC21B0015BA60 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497EFAAB1A5BC21B0015BA60 /* SearchResultCell.xib */; };
 		497EFAAE1A5CFF940015BA60 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497EFAAD1A5CFF940015BA60 /* SearchResultCell.swift */; };
 		497EFAB01A5D02280015BA60 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497EFAAF1A5D02280015BA60 /* NothingFoundCell.xib */; };
+		49A80C7A1A5FC1F20045E73D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A80C791A5FC1F20045E73D /* LoadingCell.xib */; };
+		49A80C7C1A603A1F0045E73D /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A80C7B1A603A1F0045E73D /* UIImageView+DownloadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		492F2AA51A62662B0050DAA8 /* BounceAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationController.swift; sourceTree = "<group>"; };
+		492F2AA71A6269470050DAA8 /* SlideOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationController.swift; sourceTree = "<group>"; };
+		497469D51A611397001E5871 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		497469D71A611607001E5871 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		497469D91A612958001E5871 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		497EFA811A5A2F530015BA60 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497EFA851A5A2F530015BA60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		497EFA861A5A2F530015BA60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +49,6 @@
 		497EFA8B1A5A2F530015BA60 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		497EFA8E1A5A2F530015BA60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		497EFA901A5A2F530015BA60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		497EFA931A5A2F530015BA60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		497EFA991A5A2F530015BA60 /* StoreSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		497EFA9E1A5A2F530015BA60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		497EFA9F1A5A2F530015BA60 /* StoreSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSearchTests.swift; sourceTree = "<group>"; };
@@ -46,6 +56,8 @@
 		497EFAAB1A5BC21B0015BA60 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		497EFAAD1A5CFF940015BA60 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		497EFAAF1A5D02280015BA60 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		49A80C791A5FC1F20045E73D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		49A80C7B1A603A1F0045E73D /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +101,19 @@
 			children = (
 				497EFA861A5A2F530015BA60 /* AppDelegate.swift */,
 				497EFA8B1A5A2F530015BA60 /* SearchViewController.swift */,
+				497469D51A611397001E5871 /* DetailViewController.swift */,
+				497469D71A611607001E5871 /* DimmingPresentationController.swift */,
+				492F2AA71A6269470050DAA8 /* SlideOutAnimationController.swift */,
+				497469D91A612958001E5871 /* GradientView.swift */,
+				492F2AA51A62662B0050DAA8 /* BounceAnimationController.swift */,
 				497EFAA91A5B96F80015BA60 /* SearchResult.swift */,
 				497EFAAD1A5CFF940015BA60 /* SearchResultCell.swift */,
+				49A80C7B1A603A1F0045E73D /* UIImageView+DownloadImage.swift */,
 				497EFA8D1A5A2F530015BA60 /* Main.storyboard */,
 				497EFAAB1A5BC21B0015BA60 /* SearchResultCell.xib */,
 				497EFAAF1A5D02280015BA60 /* NothingFoundCell.xib */,
+				49A80C791A5FC1F20045E73D /* LoadingCell.xib */,
 				497EFA901A5A2F530015BA60 /* Images.xcassets */,
-				497EFA921A5A2F530015BA60 /* LaunchScreen.xib */,
 				497EFA881A5A2F530015BA60 /* StoreSearch.xcdatamodeld */,
 				497EFA841A5A2F530015BA60 /* Supporting Files */,
 			);
@@ -208,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				497EFA8F1A5A2F530015BA60 /* Main.storyboard in Resources */,
-				497EFA941A5A2F530015BA60 /* LaunchScreen.xib in Resources */,
+				49A80C7A1A5FC1F20045E73D /* LoadingCell.xib in Resources */,
 				497EFAAC1A5BC21B0015BA60 /* SearchResultCell.xib in Resources */,
 				497EFAB01A5D02280015BA60 /* NothingFoundCell.xib in Resources */,
 				497EFA911A5A2F530015BA60 /* Images.xcassets in Resources */,
@@ -231,9 +249,15 @@
 			files = (
 				497EFA8C1A5A2F530015BA60 /* SearchViewController.swift in Sources */,
 				497EFA871A5A2F530015BA60 /* AppDelegate.swift in Sources */,
+				49A80C7C1A603A1F0045E73D /* UIImageView+DownloadImage.swift in Sources */,
+				497469D81A611607001E5871 /* DimmingPresentationController.swift in Sources */,
+				492F2AA61A62662B0050DAA8 /* BounceAnimationController.swift in Sources */,
 				497EFAAA1A5B96F80015BA60 /* SearchResult.swift in Sources */,
 				497EFA8A1A5A2F530015BA60 /* StoreSearch.xcdatamodeld in Sources */,
 				497EFAAE1A5CFF940015BA60 /* SearchResultCell.swift in Sources */,
+				492F2AA81A6269470050DAA8 /* SlideOutAnimationController.swift in Sources */,
+				497469D61A611397001E5871 /* DetailViewController.swift in Sources */,
+				497469DA1A612958001E5871 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,14 +286,6 @@
 				497EFA8E1A5A2F530015BA60 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		497EFA921A5A2F530015BA60 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				497EFA931A5A2F530015BA60 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -425,6 +441,7 @@
 				497EFAA51A5A2F530015BA60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		497EFAA61A5A2F530015BA60 /* Build configuration list for PBXNativeTarget "StoreSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +450,7 @@
 				497EFAA81A5A2F530015BA60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
