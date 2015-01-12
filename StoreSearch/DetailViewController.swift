@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class DetailViewController: UIViewController
 {
@@ -18,8 +19,18 @@ class DetailViewController: UIViewController
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceButton: UIButton!
     var searchResult: SearchResult!
+    {
+        didSet
+        {
+            if isViewLoaded()
+            {
+                updateUI()
+            }
+        }
+    }
     var downloadTask: NSURLSessionDownloadTask?
     var dismissAnimationStyle = AnimationStyle.Fade
+    var isPopUp = false
     enum AnimationStyle
     {
         case Slide
@@ -50,15 +61,27 @@ class DetailViewController: UIViewController
         super.viewDidLoad()
         view.tintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
         popupView.layer.cornerRadius = 10
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("close"))
-        gestureRecognizer.cancelsTouchesInView = false
-        gestureRecognizer.delegate = self
-        view.addGestureRecognizer(gestureRecognizer)
+        if isPopUp
+        {
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("close"))
+            gestureRecognizer.cancelsTouchesInView = false
+            gestureRecognizer.delegate = self
+            view.addGestureRecognizer(gestureRecognizer)
+            view.backgroundColor = UIColor.clearColor()
+        }
+        else
+        {
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "LandscapeBackground")!)
+            if let displayName = NSBundle.mainBundle().localizedInfoDictionary?["CFBundleDisplayName"] as? NSString
+            {
+                title = displayName
+            }
+            popupView.hidden = true
+        }
         if searchResult != nil
         {
             updateUI()
         }
-        view.backgroundColor = UIColor.clearColor()
     }
 
     func updateUI()
@@ -95,6 +118,7 @@ class DetailViewController: UIViewController
         {
             downloadTask = artworkImageView.loadImageWithURL(url)
         }
+        popupView.hidden = false
     }
     
     @IBAction func openInStore(sender: UIButton)
@@ -105,6 +129,14 @@ class DetailViewController: UIViewController
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ShowMenu"
+        {
+            let controller = segue.destinationViewController as MenuViewController
+            controller.delegate = self
+        }
+    }
 }
 
 extension DetailViewController: UIViewControllerTransitioningDelegate
@@ -137,5 +169,33 @@ extension DetailViewController: UIGestureRecognizerDelegate
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool
     {
         return (touch.view === view)
+    }
+}
+
+extension DetailViewController: MFMailComposeViewControllerDelegate
+{
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+
+extension DetailViewController: MenuViewControllerDelegate
+{
+    func menuViewControllerSendSupportEmail(MenuViewController)
+    {
+        dismissViewControllerAnimated(true)
+        {
+            if MFMailComposeViewController.canSendMail()
+            {
+                let controller = MFMailComposeViewController()
+                controller.setSubject(NSLocalizedString("Support Request", comment: "Email subject"))
+                controller.setToRecipients(["your@email-address-here.com"])
+                controller.mailComposeDelegate = self
+                controller.modalPresentationStyle = .FormSheet
+                self.presentViewController(controller, animated: true, completion: nil)
+            }
+        }
     }
 }

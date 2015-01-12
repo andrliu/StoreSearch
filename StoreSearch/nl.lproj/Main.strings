@@ -1,0 +1,36 @@
+
+/* Class = "IBUILabel"; text = "Kind Value"; ObjectID = "6j6-Ra-Pbz"; */
+"6j6-Ra-Pbz.text" = "Kind Value";
+
+/* Class = "IBUILabel"; text = "Artist Name"; ObjectID = "CA0-2F-tkH"; */
+"CA0-2F-tkH.text" = "Artist Name";
+
+/* Class = "IBUISearchBar"; placeholder = "App name, artist, song, album, e-book"; ObjectID = "KAu-Wl-623"; */
+"KAu-Wl-623.placeholder" = "Naam van artiest, nummer, album";
+
+/* Class = "IBUIButton"; normalTitle = "$9.99"; ObjectID = "Lk1-Jt-BQx"; */
+"Lk1-Jt-BQx.normalTitle" = "$9.99";
+
+/* Class = "IBUILabel"; text = "Type:"; ObjectID = "VSE-eo-x9x"; */
+"VSE-eo-x9x.text" = "Soort:";
+
+/* Class = "IBUISegmentedControl"; its-BM-lIH.segmentTitles[0] = "All"; ObjectID = "its-BM-lIH"; */
+"its-BM-lIH.segmentTitles[0]" = "Alles";
+
+/* Class = "IBUISegmentedControl"; its-BM-lIH.segmentTitles[1] = "Music"; ObjectID = "its-BM-lIH"; */
+"its-BM-lIH.segmentTitles[1]" = "Muziek";
+
+/* Class = "IBUISegmentedControl"; its-BM-lIH.segmentTitles[2] = "Software"; ObjectID = "its-BM-lIH"; */
+"its-BM-lIH.segmentTitles[2]" = "Software";
+
+/* Class = "IBUISegmentedControl"; its-BM-lIH.segmentTitles[3] = "E-books"; ObjectID = "its-BM-lIH"; */
+"its-BM-lIH.segmentTitles[3]" = "E-boeken";
+
+/* Class = "IBUILabel"; text = "Name"; ObjectID = "jhr-09-NeD"; */
+"jhr-09-NeD.text" = "Name";
+
+/* Class = "IBUILabel"; text = "Genre Value"; ObjectID = "l2L-cx-Ieg"; */
+"l2L-cx-Ieg.text" = "Genre Value";
+
+/* Class = "IBUILabel"; text = "Genre:"; ObjectID = "mvl-Kh-Gtu"; */
+"mvl-Kh-Gtu.text" = "Genre:";

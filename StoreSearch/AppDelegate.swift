@@ -13,7 +13,23 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var splitViewController: UISplitViewController
+    {
+        return window!.rootViewController as UISplitViewController
+    }
+    var searchViewController: SearchViewController
+    {
+        return splitViewController.viewControllers.first as SearchViewController
+    }
+    var detailNavigationController: UINavigationController
+    {
+        return splitViewController.viewControllers.last as UINavigationController
+    }
+    var detailViewController: DetailViewController
+    {
+        return detailNavigationController.topViewController as DetailViewController
+    }
+    
     func customizeAppearance()
     {
         let barTintColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
@@ -25,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         // Override point for customization after application launch.
         customizeAppearance()
+        detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+        searchViewController.splitViewDetail = detailViewController
+        splitViewController.delegate = self
         return true
     }
 
@@ -117,3 +136,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UISplitViewControllerDelegate
+{
+    func splitViewController(svc: UISplitViewController, willChangeToDisplayMode displayMode: UISplitViewControllerDisplayMode)
+    {
+        println(__FUNCTION__)
+        if displayMode == .PrimaryOverlay
+        {
+            svc.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+}
