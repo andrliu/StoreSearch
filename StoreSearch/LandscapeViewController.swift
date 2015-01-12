@@ -12,7 +12,7 @@ class LandscapeViewController: UIViewController
 {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    var searchResults = [SearchResult]()
+    var search: Search!
     private var firstTime = true
     private var downloadTasks = [NSURLSessionDownloadTask]()
     
@@ -47,8 +47,61 @@ class LandscapeViewController: UIViewController
         if firstTime
         {
             firstTime = false
-            tileButtons(searchResults)
+            switch search.state
+            {
+                case .NotSearchedYet:
+                    break
+                case .Loading:
+                    showSpinner()
+                case .NoResults:
+                    showNothingFoundLabel()
+                case .Results(let list):
+                    tileButtons(list)
+            }
         }
+    }
+    
+    func searchResultsReceived()
+    {
+        hideSpinner()
+        switch search.state
+        {
+            case .NotSearchedYet, .Loading:
+                break
+            case .NoResults:
+                showNothingFoundLabel()
+            case .Results(let list):
+                tileButtons(list)
+        }
+    }
+    
+    private func showNothingFoundLabel()
+    {
+        let label = UILabel(frame: CGRect.zeroRect)
+        label.text = "Nothing Found"
+        label.backgroundColor = UIColor.clearColor()
+        label.textColor = UIColor.whiteColor()
+        label.sizeToFit()
+        var rect = label.frame
+        rect.size.width = ceil(rect.size.width/2) * 2
+        rect.size.height = ceil(rect.size.height/2) * 2
+        label.frame = rect
+        label.center = CGPoint(x: CGRectGetMidX(scrollView.bounds), y: CGRectGetMidY(scrollView.bounds))
+        view.addSubview(label)
+    }
+    
+    private func showSpinner()
+    {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        spinner.center = CGPoint(x: CGRectGetMidX(scrollView.bounds) + 0.5, y: CGRectGetMidY(scrollView.bounds) + 0.5)
+        spinner.tag = 1000
+        view.addSubview(spinner)
+        spinner.startAnimating()
+    }
+    
+    private func hideSpinner()
+    {
+        view.viewWithTag(1000)?.removeFromSuperview()
     }
     
     private func tileButtons(searchResults: [SearchResult])
@@ -105,6 +158,8 @@ class LandscapeViewController: UIViewController
                     x += marginX * 2
                 }
             }
+            button.tag = 2000 + index
+            button.addTarget(self, action: Selector("buttonPressed:"), forControlEvents: .TouchUpInside)
         }
         let buttonsPerPage = columnsPerPage * rowsPerPage
         let numPages = 1 + (searchResults.count - 1) / buttonsPerPage
@@ -112,6 +167,27 @@ class LandscapeViewController: UIViewController
         println("Number of pages: \(numPages)")
         pageControl.numberOfPages = numPages
         pageControl.currentPage = 0
+
+    }
+    
+    func buttonPressed(sender: UIButton)
+    {
+        performSegueWithIdentifier("ShowDetail", sender: sender)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ShowDetail"
+        {
+            switch search.state
+            {
+                case .Results(let list):
+                    let detailViewController = segue.destinationViewController as DetailViewController
+                    let searchResult = list[sender!.tag - 2000]
+                    detailViewController.searchResult = searchResult default:
+                    break
+            }
+        }
     }
     
     @IBAction func pageChanged(sender: UIPageControl)
